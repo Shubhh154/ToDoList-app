@@ -60,31 +60,32 @@ function App() {
   };
 
   return (
-    <>
-      <nav className="bg-red-900 text-white flex justify-between p-2 mx-auto">
+    <div className='bg-slate-900 text-white min-h-screen'>
+      <nav className="bg-purple-700 text-white flex justify-between p-3 mx-auto">
         <div>
-          <span className="font-bold text-xl mx-8">miTask</span>
+          <span className="font-bold text-xl mx-8">ToDozilla</span>
         </div>
 
-        <ul className="flex gap-4">
+        <ul className="flex gap-4 px-4">
           <li className="cursor-pointer hover:font-bold transition-all">Home</li>
           <li className="cursor-pointer hover:font-bold transition-all">Your task</li>
         </ul>
       </nav>
 
-      <div className="container mx-auto my-5 rounded-xl p-5 bg-red-100 min-h-[80vh]">
+      <div className="container mx-auto my-5 rounded-xl p-5 bg-slate-800 min-h-[80vh]">
         <div className="addTodo flex justify-center gap-3 py-5">
           <h2 className="text-l font-bold">Add a Todo</h2>
           <input
             onChange={handleChange}
             value={Todo}
             type="text"
-            className="w-80"
+            className="w-80 bg-slate-900 rounded text-center p-2 text-white"
+            placeholder='Enter your todo here...'
           />
           <button
             onClick={handleAdd}
             disabled={Todo.trim().length <= 1}
-            className="bg-red-800 hover:bg-red-950 disabled:bg-red-500 p-2 py-1 text-sm text-white rounded-md mx-6"
+            className="bg-purple-800 hover:bg-purple-950 disabled:bg-purple-700 p-2 py-1 text-sm text-white rounded-md mx-6"
           >
             Add
           </button>
@@ -129,13 +130,13 @@ function App() {
                   <div className="buttons flex h-full">
                     <button
                       onClick={() => handleEdit(item.id)}
-                      className="bg-red-800 hover:bg-red-950 p-2 py-1 text-sm text-white rounded-md mx-6"
+                      className="bg-purple-700 hover:bg-purple-500 p-2 py-1 text-sm text-white rounded-md mx-6"
                     >
                       Edit
                     </button>
                     <button
                       onClick={() => handleDelete(item.id)}
-                      className="bg-red-800 hover:bg-red-950 p-2 py-1 text-sm text-white rounded-md mx-6"
+                      className="bg-purple-700 hover:bg-purple-500 p-2 py-1 text-sm text-white rounded-md mx-6"
                     >
                       Delete
                     </button>
@@ -147,7 +148,7 @@ function App() {
           })}
         </div>
       </div>
-    </>
+    </div>
   );
 }
 
